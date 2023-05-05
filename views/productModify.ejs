@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head')%>
+<body>
+    <%- include('./partials/menuParams')%>
+        <main>
+            <%- include('./partials/genders')%>
+            <center>
+                <div class="alert alert-danger" hidden id="errorsDiv"></div>
+
+                <br><br>
+            <h2>Estás editando: <%=product.title%></h2>
+            <form action="/productEdit/<%= product.id %>" method="POST" class="form" enctype="multipart/form-data" id="UserForm">
+                 <h1>Modifica tu producto</h1>
+                 <label for="name"><p>Introduce el nuevo nombre del producto</p></label>
+                 <input type="text" name="name" id="name" data-label="Nombre" value="<%= product.title %>">
+                 <br>
+                 <label for="description"><p>Introduce la nueva descripcion de producto</p></label>
+                 <textarea name="description" id="description" cols="30" rows="10"  data-label="Descripcion" value="<%= product.description %>" placeholder="Escribe aqui tu Descripcion(Sinopsis)."><%= product.description %></textarea>
+
+                 <!-- <input type="description" id="description" data-label="Descripcion" name="description" value=""> -->
+                <br>
+                <label for="gender"><p>introduce el genero</p></label>
+                <select id="gender" name="gender" data-label="Genero">
+
+                    <%if(genre){%>
+                        <% for (let i = 0; i < genre.length; i++) { %>
+                                <option name="<%=genre[i].name%>" value=<%=genre[i].id%>><%=genre[i].name%></option>           
+                        <% } %>
+                         <%}%>
+                    
+                </select>
+                 <br>
+                 <label for="categoria">Introduce la categoria</label>
+                 <br>
+                 <select id="category" data-label="Categoria" name="category">
+                    <%if(category){%>
+                    <% for (let i = 0; i < category.length; i++) { %>
+                        
+
+                            <option name="<%=category[i].name%>" id="<%=category[i].name%>" value=<%=category[i].id%>><%=category[i].name%></option>
+                       
+                    <% } %>
+                     <%}%>
+                 </select>
+                <br>
+                
+                <br>
+                <label for="price"><p>Introduce el nuevo precio del producto</p></label>
+                <input type="number" id="price" data-label="Precio" name="price" value="<%= product.price %>" minlength="1">
+                
+                
+                 <br> 
+                 <%if(locals.errors) {
+                    errors.forEach(errors => {%>
+                  <p class="arriba"><%=errors.msg%></p>
+                  <% })
+                    }
+                  %>  
+                  <div class="alert alert-danger" hidden id="errorsDiv"></div>
+                  
+                 <br>
+                 <input type="submit" value="Continuar">
+                 <br>   
+
+                </form>
+                <form action="/delete/<%= product.id %>" method="POST">
+            <input class="form borrar" type="submit" value="Borrar">
+        </form>
+            <br>
+            <br>
+
+        </main>
+
+    </center>
+   
+    <%- include('./partials/footerParams')%>
+
+</body>
+<script src="/js/formValidator.js"></script>
+
+</html>

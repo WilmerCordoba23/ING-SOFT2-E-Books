@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head')%>
+
+    <body>
+
+        <%- include('./partials/menu')%>
+        <%- include('./partials/genders')%>
+
+            <main>
+
+                    <div class="products">
+                        <div class="cart">
+                            <div>
+                                <h1 id="title_cart">Carrito</h1>
+                            </div>
+                            <hr id="cart-line" color="#c8c8c8" size="1px">
+                            <div class="productOrganization" id="carrito">
+                                
+                            </div>
+    
+    
+                            <div class="subtotal">
+                                <h2 id="subtotalCarrito2">Subtotal (0 productos):$0</h2>
+                            </div>
+                        </div>
+    
+                        <div class="total">
+                            <h2 id="subtotalCarrito">Subtotal (0 productos):$0</h2>
+                            <div class="pago" style="text-align: right;"><button class="pago" id="borrar">Vaciar carrito</button></div>
+                            <div class="pago"><button class="pago" id="pago"><a style="color:black; text-decoration-line: none;">Proceder al pago</a></button></div>
+                        </div>
+                    </div>
+            </main>
+
+            <%- include('./partials/footer')%>
+
+    </body>
+
+</html>
+<script src="/js/carrito.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.all.min.js"></script>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head')%>
+<body>
+    <%- include('./partials/menu')%>
+    <main>
+        <%- include('./partials/genders')%>
+        <%- include('./partials/banner')%>
+        <div class="informacion-relacionada">
+            <section  class="informacion-lista">
+                <ul>
+                    <li><a href="">Generos  </a></li>
+                    <li><a href="">Ficcion </a></li>
+                    <li><a href="">Terror </a></li>
+                    <li><a href="">Novelas </a></li>
+                    <li><a href="">Comics </a></li>
+                </ul>
+            </section>
+            <section class="informacion-encuentra">
+                <h4>ENCUENTRA TU LUGAR IDEAL EN LA LIBRERÍA EN LÍNEA E-BOOKS
+                </h4>
+                <p>
+                    ¡Más de 100 libros listos para enviar, 200 libros electrónicos y 80 audiolibros para escuchar de inmediato! Apoya esta pagina de jovenes emprendedores, cada miga de pan cuenta y ayuda a agrandar este sueño, para ser hecho realidad.
+                </p>
+                <p>
+                    “La educación es el arma más poderosa que puedes usar para cambiar el mundo”
+                    -NELSON MANDELA
+                </p>
+            </section>
+            <section class="informacion-visual">
+                    <img src="/images/mensaje.png" alt="">
+            </section>
+        </div>
+        <section class="seccion">
+            <h2 class="titulo-seccion">Novedades</h2>
+            <div  class="novedades">
+                <% for (let i = 0; i < product.length; i++) { %>
+                    <%if(product[i].category_id==2){%>
+                        <article>
+                            <a href="/productDetail/<%=product[i].id%>" class="detalles">
+                                <img src="images/products/<%=product[i].image%>" alt="<%=product[i].image%>" class="img_producto">                            <div>
+                                <div>
+                                    <h4 class="descripcion"><%=product[i].title%></h4>
+                                    <h4 class="precio">USD $<%=product[i].price%></h4>
+                                </div>
+                            </a>
+                        </article>
+                        <br>
+                        <br>
+                    <%}%>
+                <% } %>
+            </div>
+        </section>
+        <section class="seccion">
+            <h2 class="titulo-seccion">Mas vendidos</h2>
+            <div  class="novedades">
+                <% for (let i = 0; i < product.length; i++) { %>
+                    <%if(product[i].category_id==1){%>
+                        <article>
+                            <a href="/productDetail/<%=product[i].id%>" class="detalles">
+                                <img src="images/products/<%=product[i].image%>" alt="<%=product[i].image%>" class="img_producto">
+                                <div>
+                                    <h4 class="descripcion"><%=product[i].title%></h4>
+                                    <h4 class="precio">USD $<%=product[i].price%></h4>
+                                </div>
+                           </a>
+                        </article>
+                        <br>
+                        <br>
+                    <%}%>
+                <% } %>
+            </div>
+        </section>
+        <section class="seccion">
+            <h2 class="titulo-seccion">Recomendados</h2>
+            <div  class="novedades">
+                <% for (let i = 0; i < product.length; i++) { %>
+                    <%if(product[i].category_id==3){%>
+                        <article>
+                            <a href="/productDetail/<%=product[i].id%>" class="detalles">
+                                <img src="images/products/<%=product[i].image%>" alt="<%=product[i].image%>" class="img_producto">
+                                <div>
+                                    <h4 class="descripcion"><%=product[i].title%></h4>
+                                    <h4 class="precio">USD $<%=product[i].price%></h4>
+                                </div>
+                            </a>
+                        </article>
+                        <br>
+                        <br>
+                    <%}%>
+                <% } %>
+            </div>
+        </section>
+    </main>
+    <%- include('./partials/footer')%>
+</body>
+</html>

@@ -1,0 +1,62 @@
+[
+ {
+  "Identificador": 1,
+  "Nombre": "Wilmer Alexander",
+  "Apellido": "Cordoba Arroyo",
+  "Email": "alexandercordoba2003@hotmail.com",
+  "Contraseña": "$2a$10$s./KXxSv1hN6Sz1xug36FeQme3kogSVC3TaF4ziZx.cWfeD51beYa",
+  "Imagen": "1659411449513_img_.jpg",
+  "ImagenAlt": null,
+  "Admin": true
+ },
+ {
+  "Identificador": 2,
+  "Nombre": "Kervin Joshua",
+  "Apellido": "Cordoba Palacios",
+  "Email": "kervincordoba33@gmail.com",
+  "Contraseña": "$2a$10$GL/Q7FoiJlCp99xG95mD8e2NUr4nzC6vBQyqw/.9Tr9TrtnV1bHEq",
+  "Imagen": null,
+  "ImagenAlt": null,
+  "Admin": true
+ },
+ {
+  "Identificador": 3,
+  "Nombre": "Sergio Andres",
+  "Apellido": "Cordoba Torrez",
+  "Email": "sergioandrestorrez@gmail.com",
+  "Contraseña": "$2a$10$Udn2d/luAy6tH0.B9b8/xuRxjkNpDQVuOwcDfdmv92kFrfjKEccVe",
+  "Imagen": null,
+  "ImagenAlt": null,
+  "Admin": true
+ },
+ {
+  "Identificador": 4,
+  "Nombre": "kervin joshua",
+  "Apelliddo": "ffg",
+  "Email": "kervincordoba33@gmail.com",
+  "Contraseña": "$2a$10$nNILYkogKuhcobHm2HV7jedxj./vdTLh2gIP/HHF5lNjzU4EUu13K",
+  "Image": "Captura de pantalla (10).png",
+  "Imagealt": "",
+  "Admin": false
+ },
+ {
+  "Identificador": 13,
+  "Nombre": "Hoid",
+  "Apellido": "worldhopper",
+  "Email": "frost@gmail.com",
+  "Contraseña": "$2a$10$89/NFyhMoNv6cWDrkeIMeO65T0pe2jG5NdGn50FkJB2RaiLu8nAMu",
+  "Imagen": "1659546383560_img_.jpg",
+  "Imagealt": "",
+  "Admin": false
+ },
+ {
+  "Identificador": 6,
+  "Nombre": "wilmer",
+  "Apellido": "cordobaqweq",
+  "Email": "alexandercordoba2003@hotmail.com",
+  "Contraseña": "$2a$10$VcYbUC/2s18XEk5/v7oY..0h8TPrz9LnMfHB8dxct2jGbKdla.2Wq",
+  "Imagen": "",
+  "Imagealt": "",
+  "Admin": false
+ }
+]

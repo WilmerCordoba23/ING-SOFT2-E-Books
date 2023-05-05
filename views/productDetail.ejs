@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head')%>
+<body>
+    <%- include('./partials/menuParams')%>
+    <%- include('./partials/genders')%>
+    <main>
+        <Div id="productDetails">
+            <div  class="details">
+                <div>
+                    <img src="../images/products/<%=product.image%>" alt="<%=product.title%>" height="400px" width="300px" >
+                </div>
+                <div id="generalDetails">
+                    <div id="nameDetails">
+                        <h1><%=product.title%></h1>
+                    </div>
+                    <hr id="detailsLine">
+                    <div id="priceDetails">
+                        <h1>$<%=product.price%></h1>
+                    </div>
+                    <div id="format">
+                        <!-- <button id="formatDetails">Tapa dura</button>
+                        <button id="formatDetails">Tapa Blanda</button>
+                        <button id="formatDetails">Digital</button> -->
+                        <%if(admin==true){%>
+                            <a href="/productModify/<%=product.id%>"><button id="payButton2">Modificar Libro</button></a>
+                        <%}%>
+                    </div>
+                    <div id="payDetails">
+                        <button id="payButton1" value="<%=product.id%>" name="<%=product.title%>">Añadir al Carrito</button>
+                        <button id="payButton2"><a href="/productCart" style="color:black; text-decoration-line: none;">Comprar ahora</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="detailsMobile">
+                    <div id="viewDetails">
+                        <div id="nameDetails">
+                            <h1><%=product.name%></h1>
+                        </div>
+                    </div>
+                    <img src="../images/products/<%=product.image%>" alt="El camino de los Reyes" >
+                        <hr id="detailsLineMobile">
+                    <div id="generalDetails">
+                           <h2 id="detailMobile"><%=product.title%> $<%=product.price%></h2> 
+                          
+                        <div id="payDetails">
+                            <button id="payButton1Mobile" value="<%=product.id%>" name="<%=product.title%>">Añadir al Carrito</button>
+                            <button id="payButton2"><a href="/productCart" style="color:black; text-decoration-line: none;">Comprar ahora</a></button>
+                        </div>
+                    </div>
+                <hr id="detailsLineMobile">
+            <div  id="sinopsisDetailsMobile">
+                <p id="sinopsisName">Sinopsis</p>
+                <div id=sinopsis>
+                    <p id="sinopsis"><%=product.description%></p>
+                </div>
+            </div>
+        </div>
+        <div  id="sinopsisDetails">
+                <p id="sinopsisName">Sinopsis</p>
+                <div id=sinopsis>
+                    <p id="sinopsis"><%=product.description%></p>
+                </div>
+            </div>
+            <hr id="detailsLineMobileFinal">
+        </Div>
+    </main>
+    <%- include('./partials/footer')%>
+</body>
+</html>
+<script src="/js/carrito.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.all.min.js"></script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head')%>
+<body>
+    
+  
+     <%- include('./partials/menu')%> 
+    <%- include('./partials/genders')%>
+    <center>
+        <main>
+          <div class="alert alert-danger" hidden id="errorsDiv"></div>
+            <form action="/loginUsers" method="post" id="UserForm" class="form">
+                 <h1>Iniciar sesion</h1>
+                   <label for="usuario"><p>Correo electronico</p></label>
+                   <input type="text" name="usuario" id="usuario" data-label="Correo" value="<%=usuario? usuario: '' %>">
+                 <br>
+                  <label for="password"><p>Contraseña</p></label>
+                  <input type="password" data-label="Contraseña" name="password" id="contraseña" value="<%=contraseña? contraseña: '' %>">
+                 <br>
+
+                 <%if(locals.errors) {
+                    errors.forEach(errors => {%>
+                  <p class="arriba"><%=errors.msg%></p>
+                  <% })
+                    }
+                  %>
+                  <%if(incorrecto) { %>
+                    <p class="arriba"><%=incorrecto%></p>
+                    <% }%>
+
+                  <div class="alert alert-danger" hidden id="errorsDiv"></div>
+
+                    <label for="recordame"><p>Recordar usuario <input type="checkbox" name="recordame" class="checkbox"></p></label>
+                    
+                  <br>
+                    <input type="submit" value="Continuar">
+                  <br>   
+                    <p>Al continuar, aceptas las <u><a href="">Condiciones de uso</a></u>  y el <u><a class="" href="">Aviso de privacidad</a></u> de E-Books.</p>
+                  <br>
+                  <a href=""><u>¿Necesitas ayuda?</u></a>
+            </form>
+            <br>
+            <p>---------------------¿Eres nuevo en E-Books?-------------------</p>
+            <a href="./register"><input type="submit" id="login-boton" value="Crear cuenta de E-Books"></a>
+            <br>
+            <br>
+            <br>
+        </main>
+    </center>
+    
+       <%- include('./partials/footer')%>
+
+</body>
+<script src="/js/formValidator.js"></script>
+</html>

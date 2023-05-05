@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head')%>
+
+    <body id="background-user">
+        <%- include('./partials/menu')%>
+            <main>
+                <%- include('./partials/genders')%>
+
+
+
+                    <section class="seccion" id="seccionUser">
+                        
+                        <center>
+                            <%if(usuario){%>
+                                <div style="height: 60px;"></div>
+                                <div class="tarjeta">
+                                    <div class="titulo">Bienvenido a E-Books</div>
+                                    <div class="cuerpo">
+                                    <img src="./images/users/<%=usuario.imagen%>" alt="<%=usuario.nombre%>" width="200px"
+                                    height="200px" style="margin: 0 auto;"></div>
+                                    <div class="pie">
+                                        <p>Hola <%=usuario.nombre%> <%=usuario.apellido%></p>
+                                        <%if(usuario.Email=="alexandercordoba2003@hotmail.com"){%>
+                                        <p><a href="/productRegister" style="color: white; ">Crear nuevo libro</a></p>
+                                        <p><a href="https://e-books-dashboard.vercel.app/" style="color: white; ">IR al Dashboard</a></p>
+                                        <%}%>
+                                    </div>
+                                    </div>
+
+                                <%}%>
+                        
+                        
+                            <form action="/logOut" method="post" class="form" id="formUser">
+                                <label for="olvidar">
+                                    <p>Olvidar usuario <input type="checkbox" name="olvidar" class="checkbox"></p>
+                                </label>
+                                
+                                <input class="form Borrar " type="submit" value="Cerrar sesión">
+                            </form>
+                        </center>
+
+                    </section>
+
+            </main>
+            
+    </body>
+<%- include('./partials/footer')%>
+</html>
